@@ -37,4 +37,3 @@ def youtube_duration(url_argv):
 
     return duration
 
-print(youtube_duration("UCTt_D-YS1q0Om5PRViJWLJ"))
