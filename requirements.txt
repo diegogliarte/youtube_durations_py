@@ -1,2 +1,2 @@
 Flask
-googleapiclient
+google-api-python-client
