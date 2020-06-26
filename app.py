@@ -3,15 +3,17 @@ from youtube import youtube_duration
 
 app = Flask(__name__)
 
+
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if (request.method == 'POST'):
         url = request.form['url']
-        duration = youtube_duration(url)
+        duration, total_videos = youtube_duration(url)
         print(duration)
 
-        return render_template('main.html', name='yikes', duration=duration, url=url)
+        return render_template('main.html', name='youtube', duration=duration, url=url, total_videos=total_videos)
 
-    return render_template('main.html', name='yikes')
+    return render_template('main.html', name='youtube')
 
 
+app.run()
