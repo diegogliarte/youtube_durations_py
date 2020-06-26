@@ -1,4 +1,4 @@
-import isodate as isodate
+import isodate
 
 def get_playlist_videos(api, playlist_id):
     request = api.playlistItems().list(part="contentDetails",
