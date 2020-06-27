@@ -7,7 +7,7 @@ import os
 # if len(argv) != 2:
 #     print("Invalid format")
 #     exit(1)
-api_key = os.environ.get("API_YOUTUBE_KEY")
+api_key = "AIzaSyBPhY0mogI7Yfdasr427NBjfgb3ay0jDAg"
 api_service_name = "youtube"
 api_version = "v3"
 
