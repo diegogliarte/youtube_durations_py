@@ -17,4 +17,4 @@ def main():
     return render_template('main.html', name='youtube')
 
 
-app.run(host='localhost', port=6060, debug=True)
+app.run()
