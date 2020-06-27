@@ -3,23 +3,46 @@
 <head>
     <style>
         body {
-            background-color: #faf2f2 !important;
+            background-color: #222831 !important;
         }
 
         .horizontal-center {
-            margin: 0;
+            margin-top: 20px;
             position: absolute;
             left: 50%;
             -ms-transform: translateX(-50%);
             transform: translateX(-50%);
         }
 
-        div {
-            text-align: center;
+        .github-logo {
+            position: absolute;
+            top: -5px;
+            right: 16px;
+            font-size: 16px;
         }
 
+
+        div {
+            margin-top: 20px;
+            text-align: center;
+            color: #ececec;
+        }
+
+        .text {
+            font-size: 20px;
+        }
+
+        .examples {
+            top: 350px;
+            left: 50px;
+            position: absolute;
+            margin-top: 40px;
+            text-align: left;
+            font-size: 16px;
+            line-height: 15px;
+        }
     </style>
-    <title>YouTube Duration</title>
+    <title>YouTube Durations</title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -37,16 +60,23 @@
 </head>
 
 <body>
+<a href="https://github.com/diegogliarte/youtube_durations_py">
+    <div class="github-logo">
+        <img src=static/github.png alt="GitHub"
+             href="https://github.com/diegogliarte/youtube_durations_py"></div>
+</a>
 
 <div class="horizontal-center">
-    <p id="banner"><img src=static/youtube_logo_new.png style="width:50%;height:50%;"></p>
+    <img src=static/youtube_logo.png alt="YouTube Durations" style="width:100%;height:100%;margin-bottom:30px;">
+
     <form method="POST">
-        <p>Channel ID or USER = Returns duration of all videos from the channel</p>
-        <p>Playlist ID or URL or URL FROM VIDEO = Returns duration of all videos in the playlist</p>
-        <label for="url">Enter a channel or playlist url </label><br>
+        <div class="text">
+            <p>Given a YouTube playlist, it returns the total duration</p>
+            <p>Given a YouTube channel, it returns the total duration</p></div>
+
         <input type="text" id="url" name="url" placeholder="URL" aria-describedby="help" value={{url}}><br>
-        <small id="help" class="form-text text-muted">We don't accept requests with +2000 videos.</small>
-        <input id="button" type="submit" value="Calculate Duration" class="btn-primary btn-block">
+        <small id="help" class="form-text text-muted">We don't accept requests with 2000 or more videos</small>
+        <input id="button" type="submit" value="Calculate Duration" class="btn-primary" style="margin-top:10px">
     </form>
     {% if duration == 'error' %}
     <p>The URL is not valid</p>
@@ -58,6 +88,23 @@
     {% endif %}
 
 </div>
+<div class="examples">
+        <p style="font-size: 20px">Examples Playlists:</p>
+        <p><b>URL</b> - https://www.youtube.com/playlist?list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6</p>
+        <p><b>ID</b> - PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6</p>
+        <p><b>URL from video</b> -
+            https://www.youtube.com/watch?v=jFCNu1-Xdsw&list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6&index=2&t=0s</p>
+        <p style="font-size: 20px;padding-top: 10px">Examples Channels:</p>
+        <p><b>URL ID</b> - https://www.youtube.com/channel/UCBa659QWEk1AI4Tg--mrJ2A</p>
+        <p><b>URL USER</b> - https://www.youtube.com/user/enyay</p>
+        <p><b>ID</b> - UCBa659QWEk1AI4Tg--mrJ2A</p>
+        <p><b>USER</b> - enyay</p>
+    </div>
+
+
 </body>
 
 </html>
+
+
+
