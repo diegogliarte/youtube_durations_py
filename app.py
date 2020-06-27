@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from youtube import youtube_duration
+import os
 
 app = Flask(__name__)
 
@@ -16,4 +17,4 @@ def main():
     return render_template('main.html', name='youtube')
 
 
-app.run()
+app.run(host='localhost', port=6060, debug=True)
