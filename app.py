@@ -17,4 +17,5 @@ def main():
     return render_template('main.html', name='youtube')
 
 
-app.run()
+if __name__ == "__main__":
+    app.run()
