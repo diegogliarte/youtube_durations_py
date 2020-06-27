@@ -3,7 +3,6 @@ from sys import argv
 from utils import *
 import os
 
-
 # if len(argv) != 2:
 #     print("Invalid format")
 #     exit(1)
@@ -11,9 +10,8 @@ api_key = os.environ.get("API_YOUTUBE_KEY")
 api_service_name = "youtube"
 api_version = "v3"
 
+
 def youtube_duration(url_argv):
-
-
     if api_key == "ERROR":
         print("Use your own API KEY")
         exit(1)
